@@ -7,6 +7,8 @@
   --bg: #f9f9f6;
 }
 
+html { color-scheme: light; background: var(--bg); }
+
 * { box-sizing: border-box; }
 
 body {

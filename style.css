@@ -1,10 +1,10 @@
 :root {
   --width: 720px;
   --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --fg: #1a1a1a;
-  --muted: #6b6b6b;
+  --fg: #444444;
+  --muted: #7d7d7d;
   --accent: #1a5fb4;
-  --bg: #fdfdfd;
+  --bg: #f9f9f6;
 }
 
 * { box-sizing: border-box; }
@@ -67,9 +67,4 @@ footer {
   border-top: 1px solid #eee;
   color: var(--muted);
   font-size: 0.85rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root { --fg: #e8e8e8; --muted: #9a9a9a; --accent: #7aa2f7; --bg: #1a1a1a; }
-  nav, footer { border-color: #2a2a2a; }
 }

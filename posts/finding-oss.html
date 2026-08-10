@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>how hard it was to find open source to contribute to · shoreyaww</title>
+  <meta name="color-scheme" content="light" />
+  <link rel="stylesheet" href="../style.css?v=3" />
+</head>
+<body>
+  <header>
+    <h1 class="blog-title"><a href="../index.html">shoreyaww's blog</a></h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../reading.html">Reading</a>
+      <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">Code</a>
+      <a href="../cv.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+    <p class="tagline">notes on things I build, break, and think about.</p>
+    <hr />
+  </header>
+
+  <main>
+    <article>
+      <h1>how hard it was to find open source to contribute to</h1>
+      <p class="date" style="color: var(--muted); font-size: 0.9rem;">2026-08-10</p>
+
+      <p>
+        i wanted to contribute to open source. specifically to the kind of projects i
+        actually care about &mdash; llm training and inference, the efficiency side of
+        things. it sounds like it should be easy. it was not.
+      </p>
+
+      <p>
+        the first problem is that "contribute to open source" is advice everyone gives
+        and no one operationalizes. so i did the obvious thing: went to the big repos,
+        opened the issues tab, and filtered by <em>good first issue</em>. that label is
+        mostly a lie. on popular projects the genuinely easy ones are claimed within
+        minutes, and what's left is either a docs typo or an issue that's "good first"
+        only if you already understand the entire codebase.
+      </p>
+
+      <p>
+        so i went the other way and tried reading the harder issues directly. but a lot
+        of them are either stale &mdash; open for a year, maintainer went quiet &mdash;
+        or they're really design discussions in disguise, where the "fix" is three
+        paragraphs of people disagreeing about api surface. you can spend an evening
+        understanding an issue and come out with nothing to actually write.
+      </p>
+
+      <p>
+        the deeper problem was fit. i didn't want to fix a random web app. i wanted the
+        contribution to sit near what i'm good at: gpu kernels, fused ops, the parts of
+        training that waste memory and time. that narrows the field a lot, and most of
+        those repos are either too locked-down (a company's project with a closed
+        roadmap) or too raw to jump into cold.
+      </p>
+
+      <p>
+        what i eventually landed on was <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unsloth</a>.
+        it clicked for a boring, specific reason: it's built on exactly the stuff i'd
+        already been writing on my own &mdash; custom triton kernels for memory-efficient
+        training, fused linear+cross-entropy, the norm and attention pieces. i'd done a
+        smaller version of this in a side project, so reading their kernels didn't feel
+        like starting from zero. the codebase rewards someone who's already thought about
+        where the flops and the memory go.
+      </p>
+
+      <p>
+        that's the actual lesson, i think. "find a good first issue" is the wrong search.
+        the right search is: find the repo where your existing, weird, specific knowledge
+        is the thing they need. contribution gets easy the moment the code is about a
+        problem you'd have poked at anyway. for me that was efficient training. for you it
+        might be something else entirely &mdash; but it's almost never a random label on a
+        random repo.
+      </p>
+
+      <p>
+        i'm still early in it. but for the first time the issues read like things i can
+        actually do, instead of things i have to become someone else to do.
+      </p>
+    </article>
+  </main>
+
+</body>
+</html>

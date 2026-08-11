@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shaurya Madukuri — Data Scientist / Applied AI</title>
-  <meta name="description" content="Shaurya Madukuri — Data Scientist at Skan.AI. LLM agents, efficient training, and custom GPU kernels." />
+  <title>shaurya madukuri — shoreyaww</title>
+  <meta name="description" content="shaurya madukuri. i build llm agents and the efficient-training systems under them. custom triton kernels, computer-use agents, and a blog." />
   <meta name="color-scheme" content="light" />
-  <link rel="stylesheet" href="portfolio.css?v=1" />
+  <link rel="stylesheet" href="portfolio.css?v=2" />
 </head>
 <body>
   <div id="progress"></div>
 
   <header class="nav">
     <div class="wrap">
-      <a href="#hero" class="logo">Shaurya Madukuri</a>
+      <a href="#hero" class="logo">shoreyaww</a>
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#writing">Writing</a>
-        <a href="#contact">Contact</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="#about">about</a>
+        <a href="#work">work</a>
+        <a href="#projects">projects</a>
+        <a href="#writing">writing</a>
+        <a href="#contact">contact</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">cv</a>
       </nav>
     </div>
   </header>
@@ -28,24 +28,27 @@
   <!-- HERO -->
   <section id="hero">
     <div class="wrap reveal">
-      <p class="eyebrow">Data Scientist · Applied AI</p>
-      <h1 class="hero-title">I build LLM agents that survive real users &mdash;<br />and the <span class="accent">efficient-training systems</span> behind them.</h1>
+      <p class="hero-eyebrow"><span class="dot">●</span> shaurya madukuri &middot; hyderabad / delhi</p>
+      <h1 class="hero-title">
+        i like the parts of ML that sit <span class="accent">close to the metal</span> &mdash;
+        where the flops and the memory go.
+      </h1>
       <p class="hero-lead">
-        currently at Skan.AI, leading a small team on computer-use agents for BFSI.
-        i care about how models reason and how to train and run them cheaply &mdash;
-        down to hand-written GPU kernels.
+        by day i build computer-use agents at skan.ai. by night i write triton kernels
+        to make training cheaper, poke at cryptography, and ship small things that break
+        in interesting ways. i mostly learn by building the thing and getting it wrong first.
       </p>
       <div class="cta">
-        <a class="btn btn-primary" href="mailto:shaurya.m207@gmail.com">Get in touch</a>
-        <a class="btn btn-ghost" href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a class="btn primary" href="mailto:shaurya.m207@gmail.com">say hi</a>
+        <a class="btn" href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">github</a>
+        <a class="btn" href="blog.html">blog</a>
+        <a class="btn" href="cv.pdf" target="_blank" rel="noopener">cv</a>
       </div>
 
-      <div class="stats">
-        <div class="stat"><div class="num" data-count="9" data-suffix="×">0</div><div class="label">training speedup with custom kernels</div></div>
-        <div class="stat"><div class="num" data-count="5" data-suffix="×">0</div><div class="label">memory reduction, scaled to 8B</div></div>
-        <div class="stat"><div class="num" data-count="3" data-suffix="+">0</div><div class="label">yrs shipping AI at Skan.AI</div></div>
-        <div class="stat"><div class="num" data-count="1" data-suffix="">0</div><div class="label">IEEE publication (ISBI 2024)</div></div>
+      <div class="currently">
+        <p><b>now</b> — leading a small team on desktop computer-use agents for BFSI.</p>
+        <p><b>nights</b> — custom triton kernels for memory-efficient training; contributing to <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unsloth</a>.</p>
+        <p><b>reading</b> — how weights leak their training data. model inversion, membership inference.</p>
       </div>
     </div>
   </section>
@@ -53,36 +56,37 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap reveal prose">
-      <h2 class="section-title">About</h2>
-      <p class="section-sub">who i am and what i work on.</p>
+      <p class="kicker"><span class="n">01</span> about</p>
+      <h2 class="title">who i am</h2>
       <p>
-        i'm Shaurya &mdash; a Data Scientist at Skan.AI and an electrical engineering
-        grad from IIT Delhi. right now i lead a small team building a computer-use agent
-        that drives desktop GUIs for BFSI workflows: a stateless step executor driven by
-        an agentic orchestration procedure, with set-of-mark prompting and a
-        thinker-grounder split for visual grounding.
+        i'm shaurya. electrical engineering out of IIT delhi, now a data scientist at
+        skan.ai. the title on the CV says "applied AI"; what i actually do most days is
+        try to get models to reason a little better and run a lot cheaper.
       </p>
       <p>
-        before that i built process-discovery pipelines &mdash; next-activity prediction
-        with a custom transformer framework, fine-tuned LLMs (Qwen, Flan-T5, Gemma), and
-        multi-model RAG for contextual reasoning and action planning.
+        right now that means leading a small team building a computer-use agent &mdash; the
+        kind that drives a real desktop GUI, screenshot by screenshot, for finance workflows.
+        a stateless step executor, set-of-mark prompting, a thinker/grounder split for
+        visual grounding, and humans in the loop when it's unsure. before that i was doing
+        process discovery: next-activity prediction with a hand-built transformer, fine-tuning
+        qwen / flan-t5 / gemma, and multi-model RAG.
       </p>
       <p>
-        the part i genuinely enjoy sits closer to the metal: making models reason better
-        and run cheaper. i've written custom Triton GPU kernels for memory-efficient
-        training, explored parallel latent reasoning, and dabble in cryptography for fun.
+        but the part i'd do for free is the low-level stuff: fused kernels, where memory
+        actually goes during training, whether a reasoning trace has to be sequential at all.
+        i'm not a "big model, more GPUs" person &mdash; i'm a "why is this wasting 5x the
+        memory it needs" person. i also mess with lattice crypto for fun, which is a
+        different way of caring about the same thing: making an idea small and exact.
       </p>
       <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">CUDA</span>
-        <span class="tag">Triton</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">C++</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">LangGraph</span>
-        <span class="tag">RAG</span>
-        <span class="tag">Docker</span>
-        <span class="tag">React</span>
+        <span class="tag">python</span>
+        <span class="tag">triton</span>
+        <span class="tag">cuda</span>
+        <span class="tag">pytorch</span>
+        <span class="tag">c++</span>
+        <span class="tag">langgraph</span>
+        <span class="tag">rag</span>
+        <span class="tag">docker</span>
       </div>
     </div>
   </section>
@@ -90,42 +94,44 @@
   <!-- WORK -->
   <section id="work">
     <div class="wrap reveal">
-      <h2 class="section-title">Work</h2>
-      <p class="section-sub">where i've shipped.</p>
-      <div class="timeline">
+      <p class="kicker"><span class="n">02</span> work</p>
+      <h2 class="title">where i've shipped</h2>
+      <div class="jobs">
         <div class="job">
-          <div class="job-head"><span class="role">Data Scientist II</span><span class="date">Mar 2026 — Present</span></div>
-          <div class="company">Skan.AI · Computer Use Agent (Desktop GUI Automation)</div>
-          <ul>
-            <li>Lead a team of 3 building a computer-use agent for automated desktop GUI interaction in BFSI workflows.</li>
-            <li>Architected a stateless step executor driven by an Agentic Orchestration Procedure (screenshot + step → atomic GUI action).</li>
-            <li>Implemented Set-of-Mark prompting with a thinker-grounder model split for visual grounding, plus HITL escalation.</li>
-          </ul>
+          <div class="job-head"><span class="role">data scientist II</span><span class="date">mar 2026 — now</span></div>
+          <div class="company">skan.ai · computer-use agent</div>
+          <p>
+            leading a team of 3 on an agent that automates desktop GUIs for BFSI. a stateless
+            step executor driven by an orchestration loop (screenshot + step → one atomic
+            action), set-of-mark prompting, a thinker/grounder split, and escalation to a
+            human when confidence drops.
+          </p>
         </div>
         <div class="job">
-          <div class="job-head"><span class="role">Data Scientist I</span><span class="date">Jul 2024 — Apr 2026</span></div>
-          <div class="company">Skan.AI · Agentic RPA Discovery & Playbook Execution</div>
-          <ul>
-            <li>Modeled next-activity prediction with a custom-built transformer framework; fine-tuned Qwen, Flan-T5, Gemma.</li>
-            <li>Built rolling automatability scores from perplexity at the sub-sequence level for process discovery.</li>
-            <li>Designed an end-to-end process-understanding pipeline with Ollama-based models and multi-model RAG, productionized with latency-aware architecture.</li>
-          </ul>
+          <div class="job-head"><span class="role">data scientist I</span><span class="date">jul 2024 — apr 2026</span></div>
+          <div class="company">skan.ai · agentic process discovery</div>
+          <p>
+            next-activity prediction with a custom transformer; fine-tuned qwen, flan-t5, gemma.
+            built rolling automatability scores from sub-sequence perplexity, and an end-to-end
+            process-understanding pipeline with local models + multi-model RAG, shipped with a
+            latency-aware architecture.
+          </p>
         </div>
         <div class="job">
-          <div class="job-head"><span class="role">Data Scientist Intern</span><span class="date">May 2023 — Jul 2023</span></div>
-          <div class="company">Skan.AI · Event Data Extraction with LLMs</div>
-          <ul>
-            <li>Built fine-tuned BERT/BART/Pegasus models for event extraction via a teacher-student methodology.</li>
-            <li>Designed compact domain-specific models and applied clustering to improve extraction consistency.</li>
-          </ul>
+          <div class="job-head"><span class="role">data scientist intern</span><span class="date">may 2023 — jul 2023</span></div>
+          <div class="company">skan.ai · event extraction with LLMs</div>
+          <p>
+            fine-tuned BERT / BART / pegasus for event extraction via a teacher-student setup,
+            plus compact domain models and clustering to keep extraction consistent.
+          </p>
         </div>
         <div class="job">
-          <div class="job-head"><span class="role">Data Analyst Intern · Software Engineer Intern</span><span class="date">2022 — 2023</span></div>
-          <div class="company">Jarvis Labs · Fynstack</div>
-          <ul>
-            <li>Built trading analytics (velocity, liquidity ratio, Gini) from on-chain data (Etherscan, Glassnode).</li>
-            <li>Built AWS backends (GraphQL, AppSync) with fuzzy-merge/regex consolidation of annual statements.</li>
-          </ul>
+          <div class="job-head"><span class="role">data / software intern</span><span class="date">2022 — 2023</span></div>
+          <div class="company">jarvis labs · fynstack</div>
+          <p>
+            trading analytics (velocity, liquidity ratio, gini) off on-chain data, and AWS
+            backends (graphql, appsync) with fuzzy-merge/regex consolidation of statements.
+          </p>
         </div>
       </div>
     </div>
@@ -134,40 +140,45 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="wrap reveal">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">things i built to understand something better.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>PaCT</h3>
-          <div class="meta">Parallel Continuous Thought for LLM Reasoning</div>
-          <p>A parallel latent-reasoning framework that removes recurrent unrolling in continuous thought via stage-wise parallel latent resynthesis.</p>
-          <ul>
-            <li>Learnable query codebook + cross-attention, bidirectional within-stage refinement.</li>
-            <li>4–9× training speedup over Coconut, matching/beating accuracy on GSM8k, ProntoQA, ProsQA; scaled to LLaMA-3B/8B.</li>
-          </ul>
+      <p class="kicker"><span class="n">03</span> projects</p>
+      <h2 class="title">things i built to understand something</h2>
+      <div class="projects">
+        <div class="proj">
+          <h3>PaCT <span class="tagname">parallel continuous thought</span></h3>
+          <p>
+            a latent-reasoning framework that drops the recurrent unrolling in continuous
+            thought via stage-wise parallel resynthesis &mdash; learnable query codebook +
+            cross-attention. 4–9× faster training than coconut while matching or beating it
+            on gsm8k / prontoqa / prosqa, scaled to llama-3b and 8b.
+          </p>
         </div>
-        <div class="card">
-          <h3>Forge</h3>
-          <div class="meta">Custom GPU Kernels for LLM Training</div>
-          <p>Custom Triton kernels for memory-efficient training.</p>
-          <ul>
-            <li>Fused linear + cross-entropy with tiled vocab, avoiding full logit materialization.</li>
-            <li>Single-pass fused RMSNorm/LayerNorm; custom SwiGLU and RoPE with fused fwd/bwd.</li>
-          </ul>
+        <div class="proj">
+          <h3>forge <span class="tagname">gpu kernels</span></h3>
+          <p>
+            custom triton kernels for memory-efficient training: fused linear + cross-entropy
+            with tiled vocab (no full logit materialization), single-pass rmsnorm/layernorm,
+            and fused swiglu + rope forward/backward. the thing that made unsloth feel like home.
+          </p>
         </div>
-        <div class="card">
-          <h3>DS Coin</h3>
-          <div class="meta">Cryptocurrency in Java</div>
-          <p>A decentralized cryptocurrency model with authenticated linked lists and Merkle trees for secure storage, transaction validation, and fraud detection.</p>
+        <div class="proj">
+          <h3>hobitat <span class="tagname">a social app that didn't catch</span></h3>
+          <p>
+            a social network for slowly getting good at hobbies, in public. i got the shape
+            wrong &mdash; built a consistency-shaped product for an inconsistency-shaped
+            behaviour. open-sourced, app + web. <a href="posts/hobitat.html">the postmortem →</a>
+          </p>
         </div>
-        <div class="card">
-          <h3>Fully Homomorphic Encryption</h3>
-          <div class="meta">Lattice-based Cryptography</div>
-          <p>Lattice-based short-integer-solution and Regev's LWE encryption, building up to a ring-LWE fully homomorphic encryption scheme.</p>
+        <div class="proj">
+          <h3>ds coin / FHE <span class="tagname">cryptography for fun</span></h3>
+          <p>
+            a toy cryptocurrency in java (authenticated linked lists, merkle trees), and a
+            lattice build-up from SIS and regev's LWE all the way to a ring-LWE fully
+            homomorphic encryption scheme.
+          </p>
         </div>
       </div>
-      <p style="margin-top:1.5rem;">
-        Publication: <em>Glaucoma Abnormality Classification using YOLO and SWIN Transformer</em> —
+      <p style="margin-top:1.6rem; color: var(--muted); font-size:0.95rem;">
+        also a paper: <em>glaucoma abnormality classification using YOLO and SWIN transformer</em>,
         <a href="https://doi.org/10.1109/ISBI56570.2024.10635301" target="_blank" rel="noopener">IEEE ISBI 2024</a>.
       </p>
     </div>
@@ -176,34 +187,35 @@
   <!-- WRITING -->
   <section id="writing">
     <div class="wrap reveal">
-      <h2 class="section-title">Writing</h2>
-      <p class="section-sub">notes on what i build, break, and get wrong. <a href="blog.html">all posts →</a></p>
+      <p class="kicker"><span class="n">04</span> writing</p>
+      <h2 class="title">what i build, break, and get wrong</h2>
       <ul class="writing-list">
         <li><a href="posts/finding-oss.html">how hard it was to find open source to contribute to</a><span class="date">2026-08-10</span></li>
         <li><a href="posts/hobitat.html">things i got wrong about building hobitat</a><span class="date">2026-07-29</span></li>
       </ul>
-      <p style="margin-top:1.5rem;"><a href="reading.html">what i'm reading →</a></p>
+      <p style="margin-top:1.4rem;"><a href="blog.html">all posts →</a> &nbsp; <a href="reading.html">what i'm reading →</a></p>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap reveal">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-sub">open to interesting problems and collaborations.</p>
+      <p class="kicker"><span class="n">05</span> contact</p>
+      <h2 class="title">say hi</h2>
+      <p style="color: var(--muted);">if it's about efficient training, kernels, agents, or a weird idea &mdash; i'm in.</p>
       <div class="contact-links">
-        <a href="mailto:shaurya.m207@gmail.com">shaurya.m207@gmail.com</a>
-        <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">Twitter / X</a>
-        <a href="https://www.linkedin.com/in/shaurya-madukuri-53aa23146/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:shaurya.m207@gmail.com">email</a>
+        <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">github</a>
+        <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">twitter</a>
+        <a href="https://www.linkedin.com/in/shaurya-madukuri-53aa23146/" target="_blank" rel="noopener">linkedin</a>
       </div>
     </div>
   </section>
 
   <footer class="foot">
-    <div class="wrap">© 2026 Shaurya Madukuri</div>
+    <div class="wrap">shoreyaww · shaurya madukuri · 2026</div>
   </footer>
 
-  <script src="portfolio.js?v=1"></script>
+  <script src="portfolio.js?v=2"></script>
 </body>
 </html>

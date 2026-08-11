@@ -82,23 +82,33 @@ h1.hero-title .accent { color: var(--accent); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.5rem; }
 .tag { font-family: var(--mono); font-size: 0.76rem; background: var(--accent-soft); color: #8f3d20; padding: 0.28rem 0.65rem; border-radius: 6px; }
 
-/* work list */
-.jobs { display: flex; flex-direction: column; }
-.job { padding: 1.3rem 0; border-top: 1px dashed var(--border); }
-.job:first-child { border-top: none; padding-top: 0; }
+/* work blocks */
+.jobs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.job {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.1rem 1.2rem; transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.job:hover { border-color: var(--accent); transform: translateY(-2px); }
 .job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.2rem; }
 .job-head .role { font-weight: 700; }
-.job-head .date { font-family: var(--mono); color: var(--faint); font-size: 0.78rem; }
-.job .company { color: var(--accent); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
-.job p { color: var(--muted); font-size: 0.96rem; }
+.job-head .date { font-family: var(--mono); color: var(--faint); font-size: 0.74rem; }
+.job .company { color: var(--accent); font-size: 0.85rem; margin: 0.15rem 0 0.5rem; }
+.job p { color: var(--muted); font-size: 0.92rem; }
 
-/* projects */
-.projects { display: flex; flex-direction: column; gap: 0.4rem; }
-.proj { padding: 1.2rem 0; border-top: 1px dashed var(--border); }
-.proj:first-child { border-top: none; padding-top: 0; }
-.proj h3 { font-size: 1.08rem; display: flex; align-items: baseline; gap: 0.6rem; }
-.proj h3 .tagname { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); font-weight: 400; }
-.proj p { color: var(--muted); font-size: 0.96rem; margin-top: 0.3rem; }
+/* project blocks */
+.projects { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.proj {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.1rem 1.2rem; transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.proj:hover { border-color: var(--accent); transform: translateY(-2px); }
+.proj h3 { font-size: 1.02rem; display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.proj h3 .tagname { font-family: var(--mono); font-size: 0.72rem; color: var(--faint); font-weight: 400; }
+.proj p { color: var(--muted); font-size: 0.92rem; }
+
+@media (max-width: 640px) {
+  .jobs, .projects { grid-template-columns: 1fr; }
+}
 
 /* writing */
 .writing-list { list-style: none; }

@@ -29,9 +29,6 @@ a:hover { text-decoration: underline; }
 
 .wrap { max-width: var(--width); margin: 0 auto; padding: 0 1.5rem; }
 
-/* progress */
-#progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--accent); z-index: 100; }
-
 /* nav */
 header.nav {
   position: sticky; top: 0; z-index: 50;
@@ -49,17 +46,14 @@ header.nav .wrap { display: flex; align-items: center; justify-content: space-be
 @media (max-width: 640px) { .nav-links { gap: 0.9rem; } .nav-links a { font-size: 0.75rem; } }
 
 /* sections */
-section { padding: 4.5rem 0; }
+section { padding: 4rem 0; }
 section + section { border-top: 1px solid var(--border); }
-.kicker { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1.4rem; }
-.kicker .n { color: var(--faint); margin-right: 0.5rem; }
 
-h2.title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.4rem; letter-spacing: -0.01em; }
+h2.title { font-size: 1.35rem; font-weight: 700; margin-bottom: 1.4rem; letter-spacing: -0.01em; }
 
 /* hero */
-#hero { padding-top: 5rem; padding-bottom: 4rem; }
+#hero { padding-top: 4.5rem; padding-bottom: 3.5rem; }
 .hero-eyebrow { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; }
-.hero-eyebrow .dot { color: var(--accent); }
 h1.hero-title { font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
 h1.hero-title .accent { color: var(--accent); }
 .hero-lead { font-size: 1.12rem; color: var(--muted); max-width: 620px; margin: 1.5rem 0 2rem; }
@@ -121,8 +115,4 @@ h1.hero-title .accent { color: var(--accent); }
 .contact-links a { font-family: var(--mono); font-size: 0.9rem; }
 
 footer.foot { padding: 2.5rem 0; color: var(--faint); font-family: var(--mono); font-size: 0.78rem; }
-
-/* reveal */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

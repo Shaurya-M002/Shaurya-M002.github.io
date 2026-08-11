@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>shaurya madukuri — shoreyaww</title>
-  <meta name="description" content="shaurya madukuri. i build llm agents and the efficient-training systems under them. custom triton kernels, computer-use agents, and a blog." />
+  <meta name="description" content="shaurya madukuri — data scientist at skan.ai. computer-use agents, efficient LLM training, custom triton kernels, and a blog." />
   <meta name="color-scheme" content="light" />
-  <link rel="stylesheet" href="portfolio.css?v=4" />
+  <link rel="stylesheet" href="portfolio.css?v=5" />
 </head>
 <body>
-  <div id="progress"></div>
-
   <header class="nav">
     <div class="wrap">
       <a href="#hero" class="logo">shoreyaww</a>
@@ -27,15 +25,15 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="wrap reveal">
-      <p class="hero-eyebrow"><span class="dot">●</span> shaurya madukuri &middot; hyderabad / delhi</p>
+    <div class="wrap">
+      <p class="hero-eyebrow">shaurya madukuri &mdash; data scientist, skan.ai</p>
       <h1 class="hero-title">
-        i build ML systems that run <span class="accent">close to the metal</span>.
+        i work on the parts of ML that sit close to the metal.
       </h1>
       <p class="hero-lead">
-        data scientist at skan.ai, working on computer-use agents. on the side i write
-        triton kernels to make training cheaper. i learn by building things and getting
-        them wrong first.
+        right now that's computer-use agents at skan.ai. on the side i write triton
+        kernels to make training cheaper and cheaper. i learn by building the thing
+        and getting it wrong first.
       </p>
       <div class="cta">
         <a class="btn primary" href="mailto:shaurya.m207@gmail.com">say hi</a>
@@ -46,36 +44,33 @@
 
       <div class="currently">
         <p><b>now</b> — leading a small team on desktop computer-use agents for BFSI.</p>
-        <p><b>nights</b> — custom triton kernels for memory-efficient training; contributing to <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unsloth</a>.</p>
-        <p><b>reading</b> — how weights leak their training data. model inversion, membership inference.</p>
+        <p><b>nights</b> — triton kernels for memory-efficient training; contributing to <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unsloth</a>.</p>
+        <p><b>reading</b> — how model weights leak their training data.</p>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="wrap reveal prose">
-      <p class="kicker"><span class="n">01</span> about</p>
-      <h2 class="title">who i am</h2>
+    <div class="wrap prose">
+      <h2 class="title">about</h2>
       <p>
-        i'm shaurya. electrical engineering out of IIT delhi, now a data scientist at
-        skan.ai. the title on the CV says "applied AI"; what i actually do most days is
-        try to get models to reason a little better and run a lot cheaper.
+        i'm shaurya. electrical engineering from IIT delhi, now a data scientist at
+        skan.ai. the title says "applied AI"; most days i'm just trying to get models
+        to reason a little better and run a lot cheaper.
       </p>
       <p>
-        right now that means leading a small team building a computer-use agent &mdash; the
-        kind that drives a real desktop GUI, screenshot by screenshot, for finance workflows.
-        a stateless step executor, set-of-mark prompting, a thinker/grounder split for
-        visual grounding, and humans in the loop when it's unsure. before that i was doing
-        process discovery: next-activity prediction with a hand-built transformer, fine-tuning
-        qwen / flan-t5 / gemma, and multi-model RAG.
+        lately that's a computer-use agent &mdash; the kind that drives a real desktop GUI,
+        screenshot by screenshot, for finance workflows. before that i did process
+        discovery: next-activity prediction, fine-tuning small LLMs, and a fair amount of
+        inference work (quantization, speculative decoding, KV-cache tricks) to make it
+        cheap enough to actually ship.
       </p>
       <p>
-        but the part i'd do for free is the low-level stuff: fused kernels, where memory
-        actually goes during training, whether a reasoning trace has to be sequential at all.
-        i'm not a "big model, more GPUs" person &mdash; i'm a "why is this wasting 5x the
-        memory it needs" person. i also mess with lattice crypto for fun, which is a
-        different way of caring about the same thing: making an idea small and exact.
+        the part i'd do for free is the low-level stuff: fused kernels, where memory
+        actually goes during training, whether a reasoning trace has to be sequential at
+        all. i also mess with lattice cryptography, which is a different way of caring
+        about the same thing &mdash; making an idea small and exact.
       </p>
       <div class="tags">
         <span class="tag">python</span>
@@ -83,38 +78,31 @@
         <span class="tag">cuda</span>
         <span class="tag">pytorch</span>
         <span class="tag">c++</span>
-        <span class="tag">langgraph</span>
+        <span class="tag">onnx</span>
         <span class="tag">rag</span>
-        <span class="tag">docker</span>
       </div>
     </div>
   </section>
 
   <!-- WORK -->
   <section id="work">
-    <div class="wrap reveal">
-      <p class="kicker"><span class="n">02</span> work</p>
-      <h2 class="title">where i've shipped</h2>
+    <div class="wrap">
+      <h2 class="title">work</h2>
       <div class="jobs">
         <div class="job">
           <div class="job-head"><span class="role">sr. data scientist</span><span class="date">mar 2026 — now</span></div>
           <div class="company">skan.ai · computer-use agent</div>
-          <p>leading a team of 3 on a desktop-GUI automation agent for BFSI.</p>
+          <p>leading a team on a desktop-GUI agent across 12+ BFSI workflows — 95% atomic-step success.</p>
         </div>
         <div class="job">
           <div class="job-head"><span class="role">data scientist</span><span class="date">jul 2024 — apr 2026</span></div>
-          <div class="company">skan.ai · agentic process discovery</div>
-          <p>next-activity prediction, fine-tuned LLMs, and a multi-model RAG pipeline.</p>
+          <div class="company">skan.ai · agentic RPA discovery</div>
+          <p>next-activity prediction, multi-model RAG, and inference work — 2.9× throughput at 45% lower GPU cost.</p>
         </div>
         <div class="job">
           <div class="job-head"><span class="role">data scientist intern</span><span class="date">may 2023 — jul 2023</span></div>
-          <div class="company">skan.ai · event extraction with LLMs</div>
-          <p>fine-tuned BERT / BART / pegasus via a teacher-student setup.</p>
-        </div>
-        <div class="job">
-          <div class="job-head"><span class="role">data / software intern</span><span class="date">2022 — 2023</span></div>
-          <div class="company">jarvis labs · fynstack</div>
-          <p>on-chain trading analytics and AWS graphql backends.</p>
+          <div class="company">skan.ai · event extraction</div>
+          <p>teacher–student distillation of BERT / BART / pegasus — 6× smaller at 98% of teacher F1.</p>
         </div>
       </div>
     </div>
@@ -122,41 +110,38 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="wrap reveal">
-      <p class="kicker"><span class="n">03</span> projects</p>
-      <h2 class="title">things i built to understand something</h2>
+    <div class="wrap">
+      <h2 class="title">projects</h2>
       <div class="projects">
         <div class="proj">
           <h3>PaCT <span class="tagname">parallel continuous thought</span></h3>
           <p>
-            a latent-reasoning framework that drops the recurrent unrolling in continuous
-            thought via stage-wise parallel resynthesis &mdash; learnable query codebook +
-            cross-attention. 4–9× faster training than coconut while matching or beating it
-            on gsm8k / prontoqa / prosqa, scaled to llama-3b and 8b.
+            latent reasoning without the recurrent unrolling — stage-wise resynthesis via a
+            learnable query codebook. 4–9× faster training than coconut, ~5× memory
+            reduction, scaled to llama-3b/8b.
           </p>
         </div>
         <div class="proj">
           <h3>forge <span class="tagname">gpu kernels</span></h3>
           <p>
-            custom triton kernels for memory-efficient training: fused linear + cross-entropy
-            with tiled vocab (no full logit materialization), single-pass rmsnorm/layernorm,
-            and fused swiglu + rope forward/backward. the thing that made unsloth feel like home.
+            triton kernels for memory-efficient training. fused linear + cross-entropy cuts
+            peak activation memory 62% at 128k vocab; fused rmsnorm / swiglu / rope run
+            1.4× over the pytorch baseline.
           </p>
         </div>
         <div class="proj">
           <h3>hobitat <span class="tagname">a social app that didn't catch</span></h3>
           <p>
             a social network for slowly getting good at hobbies, in public. i got the shape
-            wrong &mdash; built a consistency-shaped product for an inconsistency-shaped
-            behaviour. open-sourced, app + web. <a href="posts/hobitat.html">the postmortem →</a>
+            wrong — a consistency-shaped product for an inconsistency-shaped behaviour.
+            <a href="posts/hobitat.html">the postmortem →</a>
           </p>
         </div>
         <div class="proj">
-          <h3>ds coin / FHE <span class="tagname">cryptography for fun</span></h3>
+          <h3>FHE <span class="tagname">lattice crypto, for fun</span></h3>
           <p>
-            a toy cryptocurrency in java (authenticated linked lists, merkle trees), and a
-            lattice build-up from SIS and regev's LWE all the way to a ring-LWE fully
-            homomorphic encryption scheme.
+            a build-up from short-integer-solution and regev's LWE all the way to a ring-LWE
+            fully homomorphic encryption scheme.
           </p>
         </div>
       </div>
@@ -169,9 +154,8 @@
 
   <!-- WRITING -->
   <section id="writing">
-    <div class="wrap reveal">
-      <p class="kicker"><span class="n">04</span> writing</p>
-      <h2 class="title">what i build, break, and get wrong</h2>
+    <div class="wrap">
+      <h2 class="title">writing</h2>
       <ul class="writing-list">
         <li><a href="posts/finding-oss.html">how hard it was to find open source to contribute to</a><span class="date">2026-08-10</span></li>
         <li><a href="posts/hobitat.html">things i got wrong about building hobitat</a><span class="date">2026-07-29</span></li>
@@ -182,10 +166,9 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="wrap reveal">
-      <p class="kicker"><span class="n">05</span> contact</p>
-      <h2 class="title">say hi</h2>
-      <p style="color: var(--muted);">if it's about efficient training, kernels, agents, or a weird idea &mdash; i'm in.</p>
+    <div class="wrap">
+      <h2 class="title">contact</h2>
+      <p style="color: var(--muted);">efficient training, kernels, agents, or a weird idea — happy to talk.</p>
       <div class="contact-links">
         <a href="mailto:shaurya.m207@gmail.com">email</a>
         <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">github</a>
@@ -199,6 +182,6 @@
     <div class="wrap">shoreyaww · shaurya madukuri · 2026</div>
   </footer>
 
-  <script src="portfolio.js?v=2"></script>
+  <script src="portfolio.js?v=3"></script>
 </body>
 </html>

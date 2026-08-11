@@ -3,43 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>shoreyaww</title>
+  <title>Shaurya Madukuri — Data Scientist / Applied AI</title>
+  <meta name="description" content="Shaurya Madukuri — Data Scientist at Skan.AI. LLM agents, efficient training, and custom GPU kernels." />
   <meta name="color-scheme" content="light" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="portfolio.css?v=1" />
 </head>
 <body>
-  <header>
-    <h1 class="blog-title"><a href="index.html">shoreyaww's blog</a></h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="reading.html">Reading</a>
-      <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">Code</a>
-      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
-    </nav>
-    <p class="tagline">notes on things I build, break, and think about.</p>
-    <hr />
+  <div id="progress"></div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="#hero" class="logo">Shaurya Madukuri</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <p>
-      hi, i'm Shaurya. i'm a data scientist at Skan.AI, where i build agents and
-      LLM systems &mdash; computer-use agents, process-discovery pipelines, and the
-      occasional custom GPU kernel to make training a little less wasteful.
-    </p>
-    <p>
-      i mostly think about how models reason and how to train and run them
-      efficiently. this is where i write it down &mdash; what i build, what i break,
-      and the things i get wrong along the way.
-    </p>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap reveal">
+      <p class="eyebrow">Data Scientist · Applied AI</p>
+      <h1 class="hero-title">I build LLM agents that survive real users &mdash;<br />and the <span class="accent">efficient-training systems</span> behind them.</h1>
+      <p class="hero-lead">
+        currently at Skan.AI, leading a small team on computer-use agents for BFSI.
+        i care about how models reason and how to train and run them cheaply &mdash;
+        down to hand-written GPU kernels.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:shaurya.m207@gmail.com">Get in touch</a>
+        <a class="btn btn-ghost" href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener">Résumé</a>
+      </div>
 
-    <h2>recent posts</h2>
-    <ul class="post-list">
-      <li><a href="posts/finding-oss.html">how hard it was to find open source to contribute to</a> <span class="date">2026-08-10</span></li>
-      <li><a href="posts/hobitat.html">things i got wrong about building hobitat</a> <span class="date">2026-07-29</span></li>
-    </ul>
-  </main>
+      <div class="stats">
+        <div class="stat"><div class="num" data-count="9" data-suffix="×">0</div><div class="label">training speedup with custom kernels</div></div>
+        <div class="stat"><div class="num" data-count="5" data-suffix="×">0</div><div class="label">memory reduction, scaled to 8B</div></div>
+        <div class="stat"><div class="num" data-count="3" data-suffix="+">0</div><div class="label">yrs shipping AI at Skan.AI</div></div>
+        <div class="stat"><div class="num" data-count="1" data-suffix="">0</div><div class="label">IEEE publication (ISBI 2024)</div></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap reveal prose">
+      <h2 class="section-title">About</h2>
+      <p class="section-sub">who i am and what i work on.</p>
+      <p>
+        i'm Shaurya &mdash; a Data Scientist at Skan.AI and an electrical engineering
+        grad from IIT Delhi. right now i lead a small team building a computer-use agent
+        that drives desktop GUIs for BFSI workflows: a stateless step executor driven by
+        an agentic orchestration procedure, with set-of-mark prompting and a
+        thinker-grounder split for visual grounding.
+      </p>
+      <p>
+        before that i built process-discovery pipelines &mdash; next-activity prediction
+        with a custom transformer framework, fine-tuned LLMs (Qwen, Flan-T5, Gemma), and
+        multi-model RAG for contextual reasoning and action planning.
+      </p>
+      <p>
+        the part i genuinely enjoy sits closer to the metal: making models reason better
+        and run cheaper. i've written custom Triton GPU kernels for memory-efficient
+        training, explored parallel latent reasoning, and dabble in cryptography for fun.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">CUDA</span>
+        <span class="tag">Triton</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">C++</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Docker</span>
+        <span class="tag">React</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap reveal">
+      <h2 class="section-title">Work</h2>
+      <p class="section-sub">where i've shipped.</p>
+      <div class="timeline">
+        <div class="job">
+          <div class="job-head"><span class="role">Data Scientist II</span><span class="date">Mar 2026 — Present</span></div>
+          <div class="company">Skan.AI · Computer Use Agent (Desktop GUI Automation)</div>
+          <ul>
+            <li>Lead a team of 3 building a computer-use agent for automated desktop GUI interaction in BFSI workflows.</li>
+            <li>Architected a stateless step executor driven by an Agentic Orchestration Procedure (screenshot + step → atomic GUI action).</li>
+            <li>Implemented Set-of-Mark prompting with a thinker-grounder model split for visual grounding, plus HITL escalation.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-head"><span class="role">Data Scientist I</span><span class="date">Jul 2024 — Apr 2026</span></div>
+          <div class="company">Skan.AI · Agentic RPA Discovery & Playbook Execution</div>
+          <ul>
+            <li>Modeled next-activity prediction with a custom-built transformer framework; fine-tuned Qwen, Flan-T5, Gemma.</li>
+            <li>Built rolling automatability scores from perplexity at the sub-sequence level for process discovery.</li>
+            <li>Designed an end-to-end process-understanding pipeline with Ollama-based models and multi-model RAG, productionized with latency-aware architecture.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-head"><span class="role">Data Scientist Intern</span><span class="date">May 2023 — Jul 2023</span></div>
+          <div class="company">Skan.AI · Event Data Extraction with LLMs</div>
+          <ul>
+            <li>Built fine-tuned BERT/BART/Pegasus models for event extraction via a teacher-student methodology.</li>
+            <li>Designed compact domain-specific models and applied clustering to improve extraction consistency.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-head"><span class="role">Data Analyst Intern · Software Engineer Intern</span><span class="date">2022 — 2023</span></div>
+          <div class="company">Jarvis Labs · Fynstack</div>
+          <ul>
+            <li>Built trading analytics (velocity, liquidity ratio, Gini) from on-chain data (Etherscan, Glassnode).</li>
+            <li>Built AWS backends (GraphQL, AppSync) with fuzzy-merge/regex consolidation of annual statements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap reveal">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">things i built to understand something better.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>PaCT</h3>
+          <div class="meta">Parallel Continuous Thought for LLM Reasoning</div>
+          <p>A parallel latent-reasoning framework that removes recurrent unrolling in continuous thought via stage-wise parallel latent resynthesis.</p>
+          <ul>
+            <li>Learnable query codebook + cross-attention, bidirectional within-stage refinement.</li>
+            <li>4–9× training speedup over Coconut, matching/beating accuracy on GSM8k, ProntoQA, ProsQA; scaled to LLaMA-3B/8B.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Forge</h3>
+          <div class="meta">Custom GPU Kernels for LLM Training</div>
+          <p>Custom Triton kernels for memory-efficient training.</p>
+          <ul>
+            <li>Fused linear + cross-entropy with tiled vocab, avoiding full logit materialization.</li>
+            <li>Single-pass fused RMSNorm/LayerNorm; custom SwiGLU and RoPE with fused fwd/bwd.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>DS Coin</h3>
+          <div class="meta">Cryptocurrency in Java</div>
+          <p>A decentralized cryptocurrency model with authenticated linked lists and Merkle trees for secure storage, transaction validation, and fraud detection.</p>
+        </div>
+        <div class="card">
+          <h3>Fully Homomorphic Encryption</h3>
+          <div class="meta">Lattice-based Cryptography</div>
+          <p>Lattice-based short-integer-solution and Regev's LWE encryption, building up to a ring-LWE fully homomorphic encryption scheme.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem;">
+        Publication: <em>Glaucoma Abnormality Classification using YOLO and SWIN Transformer</em> —
+        <a href="https://doi.org/10.1109/ISBI56570.2024.10635301" target="_blank" rel="noopener">IEEE ISBI 2024</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="wrap reveal">
+      <h2 class="section-title">Writing</h2>
+      <p class="section-sub">notes on what i build, break, and get wrong. <a href="blog.html">all posts →</a></p>
+      <ul class="writing-list">
+        <li><a href="posts/finding-oss.html">how hard it was to find open source to contribute to</a><span class="date">2026-08-10</span></li>
+        <li><a href="posts/hobitat.html">things i got wrong about building hobitat</a><span class="date">2026-07-29</span></li>
+      </ul>
+      <p style="margin-top:1.5rem;"><a href="reading.html">what i'm reading →</a></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap reveal">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">open to interesting problems and collaborations.</p>
+      <div class="contact-links">
+        <a href="mailto:shaurya.m207@gmail.com">shaurya.m207@gmail.com</a>
+        <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">Twitter / X</a>
+        <a href="https://www.linkedin.com/in/shaurya-madukuri-53aa23146/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">© 2026 Shaurya Madukuri</div>
+  </footer>
+
+  <script src="portfolio.js?v=1"></script>
 </body>
 </html>

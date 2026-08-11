@@ -60,7 +60,7 @@ h2.title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.4rem; letter-sp
 #hero { padding-top: 5rem; padding-bottom: 4rem; }
 .hero-eyebrow { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; }
 .hero-eyebrow .dot { color: var(--accent); }
-h1.hero-title { font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.18; font-weight: 800; letter-spacing: -0.02em; }
+h1.hero-title { font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
 h1.hero-title .accent { color: var(--accent); }
 .hero-lead { font-size: 1.12rem; color: var(--muted); max-width: 620px; margin: 1.5rem 0 2rem; }
 .cta { display: flex; gap: 0.7rem; flex-wrap: wrap; }
@@ -85,10 +85,9 @@ h1.hero-title .accent { color: var(--accent); }
 /* work blocks */
 .jobs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
 .job {
-  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  padding: 1.1rem 1.2rem; transition: border-color 0.2s ease, transform 0.2s ease;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.1rem 1.2rem;
 }
-.job:hover { border-color: var(--accent); transform: translateY(-2px); }
 .job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.2rem; }
 .job-head .role { font-weight: 700; }
 .job-head .date { font-family: var(--mono); color: var(--faint); font-size: 0.74rem; }
@@ -98,10 +97,9 @@ h1.hero-title .accent { color: var(--accent); }
 /* project blocks */
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
 .proj {
-  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  padding: 1.1rem 1.2rem; transition: border-color 0.2s ease, transform 0.2s ease;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.1rem 1.2rem;
 }
-.proj:hover { border-color: var(--accent); transform: translateY(-2px); }
 .proj h3 { font-size: 1.02rem; display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
 .proj h3 .tagname { font-family: var(--mono); font-size: 0.72rem; color: var(--faint); font-weight: 400; }
 .proj p { color: var(--muted); font-size: 0.92rem; }

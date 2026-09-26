@@ -1,45 +1,29 @@
-# shoreyaww — personal site
+# shoreyaww
 
-A minimalist personal website (plain HTML/CSS, no build step), styled like a
-Bear Blog. Hosted for free on GitHub Pages.
+Personal site, served by GitHub Pages at https://shaurya-m002.github.io. Plain HTML/CSS/JS, no build step.
 
-## Pages
-- `index.html` — home
-- `about.html` — about me
-- `blog.html` — posts
-- `reading.html` — reading list
-- `style.css` — all styling (720px, light/dark auto)
+- `index.html` — home: hero, projects, work, writing, contact
+- `blog.html`, `reading.html`, `posts/` — writing
+- `site.css`, `site.js` — shared by every page
+- `media/` — project clips, the reel, posters, and the `og.png` share card
+- `cv.pdf`
 
-CV link (Overleaf, read-only) is in the nav on every page:
-`https://www.overleaf.com/read/hxrttfggsmtk#41d189`
+## Clips and the reel
 
-## Preview locally
-Just open `index.html` in a browser. That's it.
+Every clip is an HTML scene in `tools/reel/scenes/`, rendered frame by frame with Playwright and encoded with ffmpeg.
 
-## Deploy free on GitHub Pages
+```bash
+cd tools/reel
+npm install
+node render.mjs                  # all scenes -> build/*.mp4 (1920x1080 masters)
+node render.mjs forge            # one scene
+node render.mjs --still 5 forge  # build/forge@5.png, for checking a frame
+node render.mjs --still 1 og && cp build/og@1.png ../../media/og.png
+./encode.sh                      # masters -> media/*.mp4, posters, media/reel.mp4
+```
 
-1. Create a GitHub account (pick a username — that becomes your URL).
-2. Create a **new public repo** named exactly:
-   `<your-username>.github.io`
-   (e.g. `shaurya.github.io` if your username is `shaurya`).
-3. Push these files:
-   ```
-   cd /Users/madukuri.shaurya/Codes/Projects/Personal/shoreyaww
-   git init
-   git add .
-   git commit -m "initial site"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
-   git push -u origin main
-   ```
-4. In the repo: **Settings → Pages** → Source = `main` branch, `/ (root)` → Save.
-5. Wait ~1 minute. Your site is live at:
-   `https://<your-username>.github.io`
+Scene motion must be a pure function of `t` (see `scene.js`) so every render is identical.
 
-## Notes
-- The URL is always `<your-username>.github.io`. If `shaurya` is taken, try
-  `shoreyaww`, `sureya`, etc.
-- To rename the brand, change "shoreyaww" in each `.html` file and the
-  `<title>` tags.
-- Later you can attach a custom domain (e.g. `shoreyaww.xyz`, ~$1/yr) under
-  Settings → Pages → Custom domain.
+## Preview
+
+Use a server that supports range requests, or video seeking breaks: `npx http-server -s`.

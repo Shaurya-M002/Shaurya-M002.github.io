@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  #name { font: 400 190px/1 var(--serif); letter-spacing: -0.02em; }
+  #rule { height: 3px; background: var(--accent); width: 0; }
+  #line { font: 400 60px/1.2 var(--serif); color: var(--fg); }
+  #line em { color: var(--accent); }
+  #meta { font: 400 24px var(--mono); color: var(--muted); }
+</style></head>
+<body>
+<div id="stage">
+  <div class="abs" id="meta" style="left:120px; top:300px">data scientist II · skan.ai · iit delhi ee</div>
+  <div class="abs" id="name" style="left:112px; top:360px">shaurya madukuri</div>
+  <div class="abs" id="rule" style="left:120px; top:590px"></div>
+  <div class="abs" id="line" style="left:120px; top:640px">i work on the parts of ML that sit <em>close to the metal.</em></div>
+</div>
+<script src="../scene.js"></script>
+<script>
+window.DURATION = 3.6;
+window.draw = (t) => {
+  show($('#meta'), prog(t, 0.2, 0.8), 12);
+  show($('#name'), prog(t, 0.3, 1.1), 30);
+  $('#rule').style.width = 180 * prog(t, 0.9, 1.6, ease.inOut) + 'px';
+  show($('#line'), prog(t, 1.2, 1.9), 18);
+};
+</script>
+</body></html>

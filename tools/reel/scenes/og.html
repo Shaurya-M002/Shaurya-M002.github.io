@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  html, body { width: 1200px; height: 630px; }
+  body::before { background: radial-gradient(700px 420px at 92% -10%, rgba(226, 128, 79, 0.12), transparent 60%); }
+  #meta { font: 400 19px var(--mono); color: var(--muted); display: flex; align-items: center; gap: 12px; }
+  #meta i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  #name { font: 400 118px/1 var(--serif); letter-spacing: -0.02em; }
+  #rule { width: 120px; height: 3px; background: var(--accent); }
+  #line { font: 400 42px/1.2 var(--serif); }
+  #line em { color: var(--accent); }
+  #tags { display: flex; gap: 10px; }
+  #tags span { font: 400 17px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; }
+  #url { font: 500 19px var(--mono); color: var(--fg); }
+</style></head>
+<body>
+<div id="stage">
+  <div class="abs" id="meta" style="left:80px; top:80px"><i></i>data scientist II · skan.ai · iit delhi ee</div>
+  <div class="abs" id="name" style="left:74px; top:150px">shaurya madukuri</div>
+  <div class="abs" id="rule" style="left:80px; top:300px"></div>
+  <div class="abs" id="line" style="left:80px; top:336px">i work on the parts of ML that sit<br><em>close to the metal.</em></div>
+  <div class="abs" id="tags" style="left:80px; top:500px"><span>triton kernels</span><span>computer-use agents</span><span>latent reasoning</span><span>on-device ml</span></div>
+  <div class="abs" id="url" style="right:80px; top:84px">shaurya-m002.github.io</div>
+</div>
+<script src="../scene.js"></script>
+<script>window.DURATION = 10; window.draw = () => {};</script>
+</body></html>

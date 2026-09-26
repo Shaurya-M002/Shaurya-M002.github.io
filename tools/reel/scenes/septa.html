@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  #mic { display: flex; align-items: center; gap: 20px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 999px; padding: 18px 30px; font: 500 24px var(--mono); color: var(--muted); }
+  #mic .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+  #wave { display: flex; align-items: center; gap: 5px; height: 40px; }
+  #wave b { display: block; width: 5px; border-radius: 3px; background: var(--fg); }
+  #raw { font: 400 38px/1.5 var(--mono); color: var(--muted); width: 1680px; }
+  #raw span { position: relative; display: inline-block; margin-right: 0.55em; }
+  #raw span .x { position: absolute; left: -4px; top: 52%; height: 3px; background: var(--accent); width: 0; }
+  #arrow { font: 500 24px var(--mono); color: var(--accent); }
+  #clean { font: 400 76px/1.15 var(--serif); color: var(--fg); }
+  .chips { display: flex; gap: 14px; }
+  .chips span { font: 400 22px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 10px 20px; }
+</style></head>
+<body>
+<div id="stage">
+  <div class="label"><i></i>septa</div>
+  <div class="brand">shaurya madukuri</div>
+  <div class="h abs" id="h" style="left:120px; top:230px">talk. let go. <em>send.</em></div>
+  <div class="abs" id="mic" style="left:120px; top:400px"><span class="dot" id="dot"></span><span id="mictext">hold to talk</span><div id="wave"></div></div>
+  <div class="abs" id="raw" style="left:120px; top:530px"></div>
+  <div class="abs" id="arrow" style="left:120px; top:660px">↳ cleaned on this machine, 0.6b model</div>
+  <div class="abs" id="clean" style="left:120px; top:710px">Can you send the deck to Ananya before Friday?</div>
+  <div class="abs chips" id="chips" style="left:120px; top:860px"><span>parakeet / whisper</span><span>local slm cleaner</span><span>no cloud</span><span>a fork of hex</span></div>
+</div>
+<script src="../scene.js"></script>
+<script>
+window.DURATION = 7;
+const words = ['um,', 'so', 'can', 'you', 'send', 'the', 'the', 'deck', 'to', 'ananya', 'before', 'uh,', 'friday'];
+const filler = new Set([0, 1, 5, 11]);
+const spans = words.map((w) => { const s = document.createElement('span'); s.innerHTML = w + '<i class="x"></i>'; $('#raw').appendChild(s); return s; });
+const bars = []; for (let i = 0; i < 30; i++) { const b = document.createElement('b'); $('#wave').appendChild(b); bars.push(b); }
+window.draw = (t) => {
+  show($('#h'), prog(t, 0.2, 1.0));
+  show($('#mic'), prog(t, 0.4, 0.9), 12);
+  const rec = t > 0.8 && t < 3.0;
+  $('#mictext').textContent = rec ? 'listening' : t >= 3.0 ? 'released' : 'hold to talk';
+  $('#dot').style.opacity = rec ? 0.55 + 0.45 * Math.sin(t * 12) : 0.35;
+  bars.forEach((b, i) => {
+    const a = rec ? Math.abs(Math.sin(t * 9 + i * 0.7) * Math.sin(t * 3.1 + i * 0.31)) : 0;
+    b.style.height = (6 + a * 34) + 'px';
+    b.style.opacity = rec ? 0.9 : 0.3;
+  });
+  spans.forEach((s, i) => {
+    const k = prog(t, 0.9 + i * 0.15, 1.1 + i * 0.15);
+    s.style.opacity = k * (filler.has(i) ? 1 - 0.65 * prog(t, 3.4, 3.9) : 1);
+    s.querySelector('.x').style.width = filler.has(i) ? `calc(${prog(t, 3.2 + (i % 3) * 0.08, 3.6 + (i % 3) * 0.08) * 100}% + 8px)` : '0';
+    if (!filler.has(i)) s.style.color = prog(t, 3.5, 4.0) > 0.5 ? 'var(--fg)' : '';
+  });
+  show($('#arrow'), prog(t, 3.9, 4.4), 10);
+  show($('#clean'), prog(t, 4.2, 4.9), 22);
+  show($('#chips'), prog(t, 4.8, 5.4), 10);
+};
+</script>
+</body></html>

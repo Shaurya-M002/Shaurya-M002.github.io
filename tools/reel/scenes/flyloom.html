@@ -1,0 +1,69 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  .stat { margin-bottom: 30px; }
+  .stat .n { font: 500 54px var(--sans); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .stat .l { font: 400 22px var(--mono); color: var(--muted); margin-top: 4px; }
+  .tag { font: 400 20px var(--mono); color: var(--muted); }
+  #readout { font: 500 26px var(--mono); color: var(--accent); }
+</style></head>
+<body>
+<div id="stage">
+  <div class="label"><i></i>flyloom</div>
+  <div class="brand">shaurya madukuri</div>
+  <div class="h abs" id="h" style="left:120px; top:230px">the whole fly brain,<br><em>on a laptop.</em></div>
+  <div class="abs" id="stats" style="left:120px; top:520px">
+    <div class="stat" id="s1"><div class="n" id="n1">0</div><div class="l">neurons, flywire fafb v783</div></div>
+    <div class="stat" id="s2"><div class="n" id="n2">0</div><div class="l">synapses</div></div>
+    <div class="stat" id="s3"><div class="n">one cpu core</div><div class="l">36× faster than the sparse-matvec way</div></div>
+  </div>
+  <canvas class="abs" id="cv" width="760" height="620" style="left:960px; top:230px"></canvas>
+  <div class="abs tag" id="tg1" style="left:1740px; top:236px">sugar grn</div>
+  <div class="abs tag" id="tg2" style="left:1740px; top:830px; color:var(--accent)">mn9</div>
+  <div class="abs tag" id="ax0" style="left:960px; top:866px; color:var(--faint)">0 ms</div>
+  <div class="abs tag" id="ax1" style="left:1640px; top:866px; color:var(--faint)">1000 ms</div>
+  <div class="abs" id="readout" style="left:1330px; top:866px">mn9 ≈ 88 hz</div>
+  <div class="foot" id="foot">sugar in → mn9 fires → the fly tries to eat · shiu, sterne et al., nature 2024</div>
+</div>
+<script src="../scene.js"></script>
+<script>
+window.DURATION = 7.2;
+const cv = $('#cv'), ctx = cv.getContext('2d');
+const ROWS = 150, W = cv.width, H = cv.height, rowH = H / ROWS;
+const r = rng(42), spikes = [];
+function poisson(row, hz, from, to) {
+  let t = from;
+  while (true) { t += -Math.log(1 - r()) / hz * 1000; if (t > to) break; spikes.push([row, t]); }
+}
+for (let row = 0; row < ROWS; row++) {
+  if (row < 10) { poisson(row, 3, 0, 200); poisson(row, 70 + r() * 30, 200, 1000); }
+  else if (row >= 40 && row < 72) { poisson(row, 2, 0, 250 + r() * 40); poisson(row, 18 + r() * 25, 250 + r() * 40, 1000); }
+  else if (row >= 100 && row < 116) { poisson(row, 2, 0, 290); poisson(row, 10 + r() * 20, 290 + r() * 30, 1000); }
+  else if (row === ROWS - 1) { poisson(row, 1, 0, 310); for (let s = 320; s < 1000; s += 1000 / 88 * (0.85 + r() * 0.3)) spikes.push([row, s]); }
+  else poisson(row, 1.5 + r() * 3, 0, 1000);
+}
+const fmt = (n) => Math.round(n).toLocaleString('en-US');
+window.draw = (t) => {
+  show($('#h'), prog(t, 0.2, 1.0));
+  ['#s1', '#s2', '#s3'].forEach((s, i) => show($(s), prog(t, 0.7 + i * 0.25, 1.3 + i * 0.25), 14));
+  $('#n1').textContent = fmt(138639 * prog(t, 0.8, 2.4, ease.expo));
+  $('#n2').textContent = fmt(15091983 * prog(t, 1.0, 2.6, ease.expo));
+  ['#tg1', '#tg2', '#ax0', '#ax1'].forEach((s) => { $(s).style.opacity = prog(t, 0.8, 1.4); });
+  const now = 1000 * prog(t, 0.8, 5.8, ease.lin);
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(226,128,79,0.06)';
+  if (now > 200) ctx.fillRect(200 / 1000 * W, 0, (now - 200) / 1000 * W, 10 * rowH);
+  for (const [row, s] of spikes) {
+    if (s > now) continue;
+    ctx.fillStyle = row === ROWS - 1 ? '#e2804f' : row < 10 ? '#edebe6' : '#6b6a65';
+    const age = now - s;
+    ctx.globalAlpha = age < 30 ? 1 : 0.85;
+    ctx.fillRect(s / 1000 * W, row * rowH + 0.5, 2, Math.max(2, rowH - 1));
+  }
+  ctx.globalAlpha = 1;
+  if (now > 0 && now < 1000) { ctx.fillStyle = 'rgba(237,235,230,0.5)'; ctx.fillRect(now / 1000 * W, 0, 1, H); }
+  $('#readout').style.opacity = prog(t, 4.2, 4.8);
+  show($('#foot'), prog(t, 3.0, 3.6), 10);
+};
+</script>
+</body></html>

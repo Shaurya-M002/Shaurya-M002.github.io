@@ -3,68 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>things i got wrong about building hobitat · shoreyaww</title>
-  <meta name="color-scheme" content="light" />
-  <link rel="stylesheet" href="../style.css?v=5" />
+  <title>things i got wrong about building hobitat · shaurya madukuri</title>
+  <meta name="description" content="hobitat was meant to be a social network for hobbies. i built a consistency-shaped product for an inconsistency-shaped behaviour." />
+  <meta name="theme-color" content="#0d0d0e" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://shaurya-m002.github.io/posts/hobitat.html" />
+  <meta property="og:title" content="things i got wrong about building hobitat · shaurya madukuri" />
+  <meta property="og:description" content="hobitat was meant to be a social network for hobbies. i built a consistency-shaped product for an inconsistency-shaped behaviour." />
+  <meta property="og:image" content="https://shaurya-m002.github.io/media/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@shaurya_mk" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../site.css?v=1" />
 </head>
 <body>
-  <header class="site-head">
-    <a href="../index.html" class="logo">shoreyaww</a>
-    <nav>
-      <a href="../index.html">home</a>
-      <a href="../blog.html">blog</a>
-      <a href="../reading.html">reading</a>
-      <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">code</a>
-      <a href="../cv.pdf" target="_blank" rel="noopener">cv</a>
-    </nav>
+  <header class="nav">
+    <div class="wrap">
+      <a href="../index.html" class="logo">shaurya madukuri</a>
+      <nav class="nav-links">
+        <a href="../index.html#projects">projects</a>
+        <a href="../index.html#work">work</a>
+        <a href="../blog.html">writing</a>
+        <a href="../cv.pdf" target="_blank" rel="noopener">cv&nbsp;↗</a>
+      </nav>
+    </div>
   </header>
-  <p class="tagline">notes on things i build, break, and think about.</p>
-  <hr />
 
-  <main>
+  <main class="page">
     <article>
+      <p class="kicker">jul 29, 2026</p>
       <h1>things i got wrong about building hobitat</h1>
-      <p class="date" style="color: var(--muted); font-size: 0.9rem;">2026-07-29</p>
       <p>
-        hobitat was meant to be a social network for hobbies — a place to pick up
-        something new and slowly get good at it, in public. i built it around three
-        layers: a private layer for your own practice, a public layer to share it,
-        and a reputation layer to reward getting better over time.
-      </p>
-      <p>
-        every social product has the same chicken-and-egg problem: no content without
-        people, no people without content. so i tried to build hooks. i reached out to
-        friends and made small challenges that break a hobby into one step a day. read
-        a book: day one, share a photo of the cover. day two, post your favorite line
-        from what you read. day three, rephrase it in your own words and add an opinion.
-        one tiny action at a time.
-      </p>
-      <p>
-        it didn't catch. people didn't engage. and here's the thing i got wrong —
-        i thought the problem was onboarding, or notifications, or the size of my
-        network. it wasn't. i even tested it on myself with a crypto-trading-learning
-        habit, and <em>i</em> couldn't stay consistent either.
-      </p>
-      <p>
-        hobbies are sparse by nature. i'll do something today, then pick it up again a
-        week later. that gap is fatal for a social app. i added reminders and
-        notifications, but when i reopened hobitat after four or five days, i'd simply
-        forgotten i was ever supposed to post there. the app assumed a rhythm that
-        hobbies don't actually have.
-      </p>
-      <p>
-        so that's the mistake, plainly: i built a consistency-shaped product for an
-        inconsistency-shaped behaviour. i don't have the fix yet. maybe hobbies need
-        something that survives the gaps instead of punishing them.
-      </p>
-      <p>
-        i've open-sourced the whole thing — app and web. poke around, break it, steal
-        ideas. if you have a take on the sparseness problem, or want to collaborate,
-        i'd genuinely love that.
-        <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">it's all on my github</a>.
-      </p>
+      hobitat was meant to be a social network for hobbies — a place to pick up
+      something new and slowly get good at it, in public. i built it around three
+      layers: a private layer for your own practice, a public layer to share it,
+      and a reputation layer to reward getting better over time.
+    </p>
+    <p>
+      every social product has the same chicken-and-egg problem: no content without
+      people, no people without content. so i tried to build hooks. i reached out to
+      friends and made small challenges that break a hobby into one step a day. read
+      a book: day one, share a photo of the cover. day two, post your favorite line
+      from what you read. day three, rephrase it in your own words and add an opinion.
+      one tiny action at a time.
+    </p>
+    <p>
+      it didn't catch. people didn't engage. and here's the thing i got wrong —
+      i thought the problem was onboarding, or notifications, or the size of my
+      network. it wasn't. i even tested it on myself with a crypto-trading-learning
+      habit, and <em>i</em> couldn't stay consistent either.
+    </p>
+    <p>
+      hobbies are sparse by nature. i'll do something today, then pick it up again a
+      week later. that gap is fatal for a social app. i added reminders and
+      notifications, but when i reopened hobitat after four or five days, i'd simply
+      forgotten i was ever supposed to post there. the app assumed a rhythm that
+      hobbies don't actually have.
+    </p>
+    <p>
+      so that's the mistake, plainly: i built a consistency-shaped product for an
+      inconsistency-shaped behaviour. i don't have the fix yet. maybe hobbies need
+      something that survives the gaps instead of punishing them.
+    </p>
+    <p>
+      i've open-sourced the whole thing — app and web. poke around, break it, steal
+      ideas. if you have a take on the sparseness problem, or want to collaborate,
+      i'd genuinely love that.
+      <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">it's all on my github</a>.
+    </p>
     </article>
+    <a class="back" href="../blog.html">← all writing</a>
   </main>
 
+  <footer class="foot">
+    <div class="wrap"><span>shoreyaww · 2026</span><span><a href="../index.html">home</a> · <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">@shaurya_mk</a></span></div>
+  </footer>
+  <script src="../site.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  #lede { font: 400 42px/1.3 var(--sans); color: var(--muted); }
+  #lede b { color: var(--fg); font-weight: 500; }
+  #strip { display: flex; gap: 2px; }
+  #strip .c { width: 8px; height: 76px; border-radius: 2px; background: #1b1b1c; }
+  .days { display: flex; }
+  .days span { width: 240px; font: 400 20px var(--mono); color: var(--faint); }
+  .legend { display: flex; gap: 56px; font: 400 22px var(--mono); color: var(--muted); }
+  .legend > div { display: flex; align-items: center; gap: 14px; }
+  .legend i { width: 18px; height: 18px; border-radius: 4px; display: inline-block; }
+  #gapbox { border: 2px dashed var(--accent); border-radius: 6px; box-sizing: border-box; }
+  #gaplabel { font: 500 24px var(--mono); color: var(--accent); }
+  #chartlabel { font: 400 22px var(--mono); color: var(--fg); }
+</style></head>
+<body>
+<div id="stage">
+  <div class="label"><i></i>noctis</div>
+  <div class="brand">shaurya madukuri</div>
+  <div class="h abs" id="h" style="left:120px; top:230px">a price for the hours <em>nobody quotes.</em></div>
+  <div class="abs" id="lede" style="left:120px; top:430px">a week has <b>168 hours</b>.<br>us equities price <b>32.5</b> of them.</div>
+  <svg class="abs" id="chart" style="left:1276px; top:400px" width="488" height="210"></svg>
+  <div class="abs" id="chartlabel" style="left:1276px; top:368px">fair value ± a measured error bar</div>
+  <div class="abs" id="gapbox" style="left:1276px; top:626px; width:484px; height:88px"></div>
+  <div class="abs" id="strip" style="left:120px; top:632px"></div>
+  <div class="abs days" id="days" style="left:120px; top:730px"></div>
+  <div class="abs legend" id="legend" style="left:120px; top:800px">
+    <div id="l1"><i style="background:var(--fg)"></i>exchange open · 32.5 h</div>
+    <div id="l2"><i style="background:#4a4946"></i>pyth · 24/5</div>
+    <div id="l3" style="color:var(--accent)"><i style="border:2px dashed var(--accent); box-sizing:border-box"></i>48 h a weekend, nothing quotes</div>
+  </div>
+  <div class="foot" id="foot">solana · stocklana hackathon · live on mainnet data, deployed on devnet</div>
+</div>
+<script src="../scene.js"></script>
+<script>
+window.DURATION = 7.4;
+const strip = $('#strip');
+const cells = [];
+for (let h = 0; h < 168; h++) { const c = document.createElement('div'); c.className = 'c'; strip.appendChild(c); cells.push(c); }
+['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].forEach((d) => { const s = document.createElement('span'); s.textContent = d; $('#days').appendChild(s); });
+const isOpen = (h) => { const d = Math.floor(h / 24), hr = h % 24; return d < 5 && hr >= 9 && hr < 16; };
+const isPyth = (h) => h < 116 || h >= 164;
+const isGap = (h) => h >= 116 && h < 164;
+
+const W = 488, H = 210, NS = 'http://www.w3.org/2000/svg';
+const r = rng(7); const pts = []; let y = 0;
+for (let i = 0; i <= 96; i++) { pts.push(y); y += (r() - 0.5) * 0.9 + 0.02; }
+const X = (i) => (i / 96) * W, Y = (v) => H * 0.42 - v * 7;
+const band = (i) => 6 + 5.5 * Math.sqrt(i);
+const line = 'M' + pts.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' L');
+const up = pts.map((v, i) => `${X(i).toFixed(1)},${(Y(v) - band(i)).toFixed(1)}`);
+const dn = pts.map((v, i) => `${X(i).toFixed(1)},${(Y(v) + band(i)).toFixed(1)}`).reverse();
+const svg = $('#chart');
+svg.innerHTML = `
+  <defs><clipPath id="clip"><rect id="clipr" x="0" y="0" width="0" height="${H}"/></clipPath></defs>
+  <line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" stroke="#3a3936" stroke-dasharray="4 8" stroke-width="2"/>
+  <g clip-path="url(#clip)">
+    <polygon points="${up.concat(dn).join(' ')}" fill="rgba(226,128,79,0.16)"/>
+    <path d="${line}" fill="none" stroke="#e2804f" stroke-width="3" stroke-linejoin="round"/>
+  </g>`;
+
+window.draw = (t) => {
+  show($('#h'), prog(t, 0.2, 1.0));
+  show($('#lede'), prog(t, 0.5, 1.2), 16);
+  show($('#strip'), prog(t, 0.6, 1.1), 10);
+  show($('#days'), prog(t, 0.6, 1.1), 10);
+  const k1 = prog(t, 1.2, 2.2, ease.inOut), k2 = prog(t, 2.4, 3.3, ease.inOut), k3 = prog(t, 3.6, 5.6, ease.inOut);
+  cells.forEach((c, h) => {
+    const x = h / 168;
+    if (isOpen(h) && x <= k1) c.style.background = 'var(--fg)';
+    else if (isPyth(h) && x <= k2) c.style.background = '#4a4946';
+    else if (isGap(h) && (h - 116) / 48 < k3) c.style.background = 'rgba(226,128,79,0.35)';
+    else c.style.background = '#1b1b1c';
+  });
+  show($('#l1'), prog(t, 1.4, 1.9), 10);
+  show($('#l2'), prog(t, 2.6, 3.1), 10);
+  show($('#l3'), prog(t, 3.1, 3.6), 10);
+  $('#gapbox').style.opacity = prog(t, 3.1, 3.6);
+  $('#chartlabel').style.opacity = prog(t, 3.8, 4.3);
+  $('#clipr').setAttribute('width', k3 * W);
+  show($('#foot'), prog(t, 4.2, 4.8), 10);
+};
+</script>
+</body></html>

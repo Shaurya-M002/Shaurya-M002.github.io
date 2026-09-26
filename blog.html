@@ -3,31 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>blog · shoreyaww</title>
-  <meta name="color-scheme" content="light" />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <title>writing · shaurya madukuri</title>
+  <meta name="description" content="notes on things i build, break, and think about." />
+  <meta name="theme-color" content="#0d0d0e" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://shaurya-m002.github.io/blog.html" />
+  <meta property="og:title" content="writing · shaurya madukuri" />
+  <meta property="og:description" content="notes on things i build, break, and think about." />
+  <meta property="og:image" content="https://shaurya-m002.github.io/media/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@shaurya_mk" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="site.css?v=1" />
 </head>
 <body>
-  <header class="site-head">
-    <a href="index.html" class="logo">shoreyaww</a>
-    <nav>
-      <a href="index.html">home</a>
-      <a href="blog.html">blog</a>
-      <a href="reading.html">reading</a>
-      <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">code</a>
-      <a href="cv.pdf" target="_blank" rel="noopener">cv</a>
-    </nav>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="logo">shaurya madukuri</a>
+      <nav class="nav-links">
+        <a href="index.html#projects">projects</a>
+        <a href="index.html#work">work</a>
+        <a href="blog.html">writing</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">cv&nbsp;↗</a>
+      </nav>
+    </div>
   </header>
-  <p class="tagline">notes on things i build, break, and think about.</p>
-  <hr />
 
-  <main>
-    <h1>blog</h1>
-    <ul class="post-list">
-      <li><a href="posts/finding-oss.html">how hard it was to find open source to contribute to</a> <span class="date">2026-08-10</span></li>
-      <li><a href="posts/hobitat.html">things i got wrong about building hobitat</a> <span class="date">2026-07-29</span></li>
+  <main class="page">
+    <p class="kicker">notes on things i build, break, and think about.</p>
+    <h1>writing</h1>
+    <ul class="posts">
+      <li><a href="posts/finding-oss.html"><span>how hard it was to find open source to contribute to</span><time>aug 2026</time></a></li>
+      <li><a href="posts/hobitat.html"><span>things i got wrong about building hobitat</span><time>jul 2026</time></a></li>
     </ul>
+    <p class="more" style="margin-top:1.6rem"><a href="reading.html">what i'm reading →</a></p>
   </main>
 
+  <footer class="foot">
+    <div class="wrap"><span>shoreyaww · 2026</span><span><a href="index.html">home</a> · <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">@shaurya_mk</a></span></div>
+  </footer>
+  <script src="site.js?v=1"></script>
 </body>
 </html>

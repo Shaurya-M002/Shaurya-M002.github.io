@@ -1,0 +1,7 @@
+{
+  "name": "shoreyaww-reel",
+  "private": true,
+  "type": "module",
+  "scripts": { "render": "node render.mjs && ./encode.sh" },
+  "dependencies": { "playwright": "^1.58.0" }
+}

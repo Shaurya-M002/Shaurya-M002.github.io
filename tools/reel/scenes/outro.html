@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  #say { font: 400 150px/1 var(--serif); }
+  #say em { color: var(--accent); }
+  #url { font: 500 34px var(--mono); color: var(--fg); }
+  .links { display: flex; gap: 60px; font: 400 26px var(--mono); color: var(--muted); }
+  .links b { color: var(--fg); font-weight: 400; }
+</style></head>
+<body>
+<div id="stage">
+  <div class="abs" id="say" style="left:112px; top:330px">say <em>hi.</em></div>
+  <div class="abs" id="url" style="left:120px; top:560px">shaurya-m002.github.io</div>
+  <div class="abs links" id="links" style="left:120px; top:650px">
+    <div>github <b>Shaurya-M002</b></div><div>x <b>@shaurya_mk</b></div><div>linkedin <b>shaurya-madukuri</b></div>
+  </div>
+</div>
+<script src="../scene.js"></script>
+<script>
+window.DURATION = 4;
+window.draw = (t) => {
+  show($('#say'), prog(t, 0.2, 1.0), 30);
+  show($('#url'), prog(t, 0.8, 1.4), 14);
+  show($('#links'), prog(t, 1.1, 1.7), 14);
+};
+</script>
+</body></html>

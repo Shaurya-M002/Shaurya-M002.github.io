@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../scene.css">
+<style>
+  .lane .t { font: 400 24px var(--mono); color: var(--muted); margin-bottom: 22px; }
+  .lane .t b { color: var(--fg); font-weight: 500; }
+  .sq { display: flex; gap: 14px; }
+  .sq .gap { width: 30px; }
+  .c { width: 64px; height: 64px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--panel); box-sizing: border-box; }
+  .track { margin-top: 22px; height: 3px; background: var(--line); width: 1010px; border-radius: 2px; position: relative; }
+  .track .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--fg); border-radius: 2px; }
+  .status { position: absolute; font: 500 22px var(--mono); }
+  #stat .big { font: 400 250px/0.9 var(--serif); color: var(--accent); letter-spacing: -0.02em; }
+  #stat .l { font: 500 38px/1.25 var(--sans); margin-top: 18px; }
+  #stat .s { font: 400 22px/1.6 var(--mono); color: var(--muted); margin-top: 22px; white-space: nowrap; }
+</style></head>
+<body>
+<div id="stage">
+  <div class="label"><i></i>pact · parallel continuous thought</div>
+  <div class="brand">shaurya madukuri</div>
+  <div class="h abs" id="h" style="left:120px; top:230px">reasoning in stages, <em>not in a line.</em></div>
+  <div class="lane abs" id="la" style="left:120px; top:450px">
+    <div class="t"><b>coconut</b> — one latent thought at a time</div>
+    <div class="sq" id="sa"></div>
+    <div class="track"><div class="fill" id="fa" style="background:#787670"></div></div>
+  </div>
+  <div class="lane abs" id="lb" style="left:120px; top:700px">
+    <div class="t"><b>pact</b> — a stage at a time, bidirectional inside it</div>
+    <div class="sq" id="sb"></div>
+    <div class="track"><div class="fill" id="fb" style="background:var(--accent)"></div></div>
+  </div>
+  <div class="abs" id="stat" style="left:1330px; top:450px">
+    <div class="big">4–9×</div>
+    <div class="l">faster training<br>than coconut</div>
+    <div class="s">same or better accuracy<br>gsm8k · prontoqa · prosqa<br>scaled to llama-3b / 8b</div>
+  </div>
+</div>
+<script src="../scene.js"></script>
+<script>
+window.DURATION = 6.8;
+const N = 12;
+const mk = (host, groups) => {
+  const out = [];
+  for (let i = 0; i < N; i++) {
+    if (groups && i && i % 4 === 0) { const g = document.createElement('div'); g.className = 'gap'; host.appendChild(g); }
+    const c = document.createElement('div'); c.className = 'c'; host.appendChild(c); out.push(c);
+  }
+  return out;
+};
+const A = mk($('#sa'), false), B = mk($('#sb'), true);
+function lit(c, k, rgb = '226,128,79') {
+  c.style.background = k > 0 ? `rgba(${rgb},${0.15 + 0.85 * k})` : 'var(--panel)';
+  c.style.borderColor = k > 0 ? `rgb(${rgb})` : 'var(--line)';
+  c.style.transform = `scale(${1 + 0.08 * Math.sin(Math.PI * clamp(k * 1.4))})`;
+}
+const startA = 1.1, stepA = 0.28, startB = 1.1, stepB = 0.34;
+window.draw = (t) => {
+  show($('#h'), prog(t, 0.2, 1.0));
+  show($('#la'), prog(t, 0.5, 1.1), 16);
+  show($('#lb'), prog(t, 0.65, 1.25), 16);
+  A.forEach((c, i) => lit(c, prog(t, startA + i * stepA, startA + i * stepA + 0.25), '120,118,112'));
+  B.forEach((c, i) => { const s = Math.floor(i / 4); lit(c, prog(t, startB + s * stepB + (i % 4) * 0.02, startB + s * stepB + 0.27)); });
+  const endA = startA + (N - 1) * stepA + 0.25, endB = startB + 2 * stepB + 0.3;
+  $('#fa').style.width = (clamp((t - startA) / (endA - startA)) * 100) + '%';
+  $('#fb').style.width = (clamp((t - startB) / (endB - startB)) * (endB - startB) / (endA - startA) * 100) + '%';
+  show($('#stat'), prog(t, endA + 0.05, endA + 0.8), 24);
+};
+</script>
+</body></html>

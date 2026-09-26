@@ -3,178 +3,247 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>shaurya madukuri — shoreyaww</title>
-  <meta name="description" content="shaurya madukuri — data scientist at skan.ai. computer-use agents, efficient LLM training, custom triton kernels, and a blog." />
-  <meta name="color-scheme" content="light" />
-  <link rel="stylesheet" href="portfolio.css?v=5" />
+  <title>shaurya madukuri</title>
+  <meta name="description" content="data scientist at skan.ai. computer-use agents by day, triton kernels by night. forge, pact, noctis, flyloom, septa, armada." />
+  <link rel="canonical" href="https://shaurya-m002.github.io/" />
+  <meta name="theme-color" content="#0d0d0e" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shaurya-m002.github.io/" />
+  <meta property="og:title" content="shaurya madukuri" />
+  <meta property="og:description" content="i work on the parts of ML that sit close to the metal. computer-use agents, triton kernels, and things i built to find out." />
+  <meta property="og:image" content="https://shaurya-m002.github.io/media/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@shaurya_mk" />
+  <meta name="twitter:creator" content="@shaurya_mk" />
+  <meta name="twitter:title" content="shaurya madukuri" />
+  <meta name="twitter:description" content="i work on the parts of ML that sit close to the metal." />
+  <meta name="twitter:image" content="https://shaurya-m002.github.io/media/og.png" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="site.css?v=1" />
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <header class="nav">
     <div class="wrap">
-      <a href="#hero" class="logo">shoreyaww</a>
+      <a href="#top" class="logo">shaurya madukuri</a>
       <nav class="nav-links">
-        <a href="#about">about</a>
-        <a href="#work">work</a>
         <a href="#projects">projects</a>
+        <a href="#work">work</a>
         <a href="#writing">writing</a>
-        <a href="#contact">contact</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">cv</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">cv&nbsp;↗</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="wrap">
-      <p class="hero-eyebrow">shaurya madukuri &mdash; data scientist, skan.ai</p>
-      <h1 class="hero-title">
-        i work on the parts of ML that sit close to the metal.
-      </h1>
-      <p class="hero-lead">
-        right now that's computer-use agents at skan.ai. on the side i write triton
-        kernels to make training cheaper and cheaper. i learn by building the thing
-        and getting it wrong first.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:shaurya.m207@gmail.com">say hi</a>
-        <a class="btn" href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">github</a>
-        <a class="btn" href="blog.html">blog</a>
-        <a class="btn" href="cv.pdf" target="_blank" rel="noopener">cv</a>
-      </div>
-
-      <div class="currently">
-        <p><b>now</b> — leading a small team on desktop computer-use agents for BFSI.</p>
-        <p><b>nights</b> — triton kernels for memory-efficient training; contributing to <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unsloth</a>.</p>
-        <p><b>reading</b> — how model weights leak their training data.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap prose">
-      <h2 class="title">about</h2>
-      <p>
-        i'm shaurya. electrical engineering from IIT delhi, now a data scientist at
-        skan.ai. the title says "applied AI"; most days i'm just trying to get models
-        to reason a little better and run a lot cheaper.
-      </p>
-      <p>
-        lately that's a computer-use agent &mdash; the kind that drives a real desktop GUI,
-        screenshot by screenshot, for finance workflows. before that i did process
-        discovery: next-activity prediction, fine-tuning small LLMs, and a fair amount of
-        inference work (quantization, speculative decoding, KV-cache tricks) to make it
-        cheap enough to actually ship.
-      </p>
-      <p>
-        the part i'd do for free is the low-level stuff: fused kernels, where memory
-        actually goes during training, whether a reasoning trace has to be sequential at
-        all. i also mess with lattice cryptography, which is a different way of caring
-        about the same thing &mdash; making an idea small and exact.
-      </p>
-      <div class="tags">
-        <span class="tag">python</span>
-        <span class="tag">triton</span>
-        <span class="tag">cuda</span>
-        <span class="tag">pytorch</span>
-        <span class="tag">c++</span>
-        <span class="tag">onnx</span>
-        <span class="tag">rag</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work">
-    <div class="wrap">
-      <h2 class="title">work</h2>
-      <div class="jobs">
-        <div class="job">
-          <div class="job-head"><span class="role">sr. data scientist</span><span class="date">mar 2026 — now</span></div>
-          <div class="company">skan.ai · computer-use agent</div>
-          <p>leading a team on a desktop-GUI agent across 12+ BFSI workflows — 95% atomic-step success.</p>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+        <div class="hero-text">
+        <p class="eyebrow"><span class="pulse"></span>data scientist II at skan.ai · bengaluru</p>
+        <h1>i work on the parts of ML that sit <em>close&nbsp;to&nbsp;the&nbsp;metal.</em></h1>
+        <p class="lead">
+          computer-use agents by day. triton kernels by night. i learn by building the
+          thing and getting it wrong first.
+        </p>
+        <div class="actions">
+          <button class="btn primary" type="button" data-reel>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+            watch the reel <span class="dim">0:50</span>
+          </button>
+          <a class="btn" href="cv.pdf" target="_blank" rel="noopener">cv ↗</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a class="icon" href="https://github.com/Shaurya-M002" target="_blank" rel="noopener" aria-label="github">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+          </a>
+          <a class="icon" href="https://x.com/shaurya_mk" target="_blank" rel="noopener" aria-label="x / twitter">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a class="icon" href="https://www.linkedin.com/in/shaurya-madukuri/" target="_blank" rel="noopener" aria-label="linkedin">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          </a>
+          <a class="icon" href="mailto:shaurya.m207@gmail.com" aria-label="email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+          </a>
         </div>
-        <div class="job">
-          <div class="job-head"><span class="role">data scientist</span><span class="date">jul 2024 — apr 2026</span></div>
-          <div class="company">skan.ai · agentic RPA discovery</div>
-          <p>next-activity prediction, multi-model RAG, and inference work — 2.9× throughput at 45% lower GPU cost.</p>
         </div>
-        <div class="job">
-          <div class="job-head"><span class="role">data scientist intern</span><span class="date">may 2023 — jul 2023</span></div>
-          <div class="company">skan.ai · event extraction</div>
-          <p>teacher–student distillation of BERT / BART / pegasus — 6× smaller at 98% of teacher F1.</p>
+        <button class="teaser" type="button" data-reel aria-label="play the reel">
+          <video muted playsinline preload="none" poster="media/forge.jpg" data-src="media/reel.mp4" data-loop-from="3.6" data-loop-to="46.3"></video>
+          <span class="teaser-cap"><span class="rec"></span>the reel · six projects in fifty seconds</span>
+        </button>
+        </div>
+
+        <dl class="now">
+          <div><dt>now</dt><dd>leading a small team on a computer-use agent that drives real desktop apps for finance workflows.</dd></div>
+          <div><dt>nights</dt><dd>fused triton kernels in <a href="https://github.com/Forge-researchlab/forge-kernels" target="_blank" rel="noopener">forge</a>, and working my way into <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unsloth</a>.</dd></div>
+          <div><dt>reading</dt><dd>how model weights leak the data they were trained on.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>projects</h2>
+          <p>things i built to find out. each clip is about seven seconds.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="media"><video muted loop playsinline preload="none" poster="media/forge.jpg" data-src="media/forge.mp4"></video></div>
+            <div class="body">
+              <div class="top"><h3>forge-kernels</h3><span class="kind">gpu kernels · open source</span></div>
+              <p>fused triton kernels for fine-tuning, patched into a hugging face model with one call. every number comes from a committed result file, including the shapes where it loses.</p>
+              <ul class="facts"><li>1.20× faster, 36% less memory on qwen2.5-0.5b</li><li>660 tests</li><li>★ 9</li></ul>
+              <div class="links"><a href="https://github.com/Forge-researchlab/forge-kernels" target="_blank" rel="noopener">code ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><video muted loop playsinline preload="none" poster="media/pact.jpg" data-src="media/pact.mp4"></video></div>
+            <div class="body">
+              <div class="top"><h3>pact</h3><span class="kind">latent reasoning · research</span></div>
+              <p>continuous thought without the recurrent unrolling. the model resynthesises its reasoning a stage at a time through a learnable query codebook, so training stops waiting on itself.</p>
+              <ul class="facts"><li>4–9× faster training than coconut</li><li>same or better on gsm8k, prontoqa, prosqa</li><li>llama-3b / 8b</li></ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><video muted loop playsinline preload="none" poster="media/noctis.jpg" data-src="media/noctis.mp4"></video></div>
+            <div class="body">
+              <div class="top"><h3>noctis</h3><span class="kind">solana · hackathon</span></div>
+              <p>a fair value for tokenised us stocks during the 48 hours a week when no exchange or oracle says anything. published with an error bar, and cover priced off it.</p>
+              <ul class="facts"><li>live on mainnet data</li><li>program on devnet</li><li>stocklana, sept 2026</li></ul>
+              <div class="links">
+                <a href="https://shaurya-m002.github.io/noctis/" target="_blank" rel="noopener">live demo ↗</a>
+                <a href="https://github.com/Shaurya-M002/noctis/releases/download/v0.1.0/noctis-demo.mp4" target="_blank" rel="noopener">2-min walkthrough ↗</a>
+                <a href="https://github.com/Shaurya-M002/noctis" target="_blank" rel="noopener">code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><video muted loop playsinline preload="none" poster="media/flyloom.jpg" data-src="media/flyloom.mp4"></video></div>
+            <div class="body">
+              <div class="top"><h3>flyloom</h3><span class="kind">connectome · simulation</span></div>
+              <p>the whole adult fruit-fly brain as a leaky integrate-and-fire model, fast enough on one cpu core that a lesion screen is a coffee break. you address neurons by name, not by 18-digit ids.</p>
+              <ul class="facts"><li>138,639 neurons, 15m synapses</li><li>36× faster than the matvec way</li><li>ships its own sanity checks</li></ul>
+              <div class="links"><span class="soon">code soon</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><video muted loop playsinline preload="none" poster="media/septa.jpg" data-src="media/septa.mp4"></video></div>
+            <div class="body">
+              <div class="top"><h3>septa</h3><span class="kind">on-device dictation</span></div>
+              <p>hold a key, talk, let go. a 0.6b model on your own machine turns the raw transcript into something you'd actually send. fillers gone, names and rupees left alone. no cloud.</p>
+              <ul class="facts"><li>fork of hex</li><li>mac, cleaner on windows</li></ul>
+              <div class="links">
+                <a href="https://shaurya-m002.github.io/Septa/" target="_blank" rel="noopener">download ↗</a>
+                <a href="https://github.com/Shaurya-M002/Septa" target="_blank" rel="noopener">code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><video muted loop playsinline preload="none" poster="media/harness.jpg" data-src="media/harness.mp4"></video></div>
+            <div class="body">
+              <div class="top"><h3>trading harness</h3><span class="kind">autonomous research · paper only</span></div>
+              <p>the part that survives live markets isn't the agent debate, it's the evaluation machinery. llm agents write the journal and can veto a trade. they can't place one.</p>
+              <ul class="facts"><li>purged k-fold, next-bar fills</li><li>deterministic risk gate</li><li>india tax overlay on every pnl</li></ul>
+              <div class="links"><span class="soon">private for now</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="also">
+          <h3>also</h3>
+          <ul>
+            <li><a href="posts/hobitat.html">hobitat</a><span>a social app for hobbies that didn't catch. i wrote down why.</span></li>
+            <li><a href="https://doi.org/10.1109/ISBI56570.2024.10635301" target="_blank" rel="noopener">glaucoma classification with yolo + swin</a><span>paper, ieee isbi 2024.</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="wrap">
-      <h2 class="title">projects</h2>
-      <div class="projects">
-        <div class="proj">
-          <h3>PaCT <span class="tagname">parallel continuous thought</span></h3>
-          <p>
-            latent reasoning without the recurrent unrolling — stage-wise resynthesis via a
-            learnable query codebook. 4–9× faster training than coconut, ~5× memory
-            reduction, scaled to llama-3b/8b.
-          </p>
-        </div>
-        <div class="proj">
-          <h3>forge <span class="tagname">gpu kernels</span></h3>
-          <p>
-            triton kernels for memory-efficient training. fused linear + cross-entropy cuts
-            peak activation memory 62% at 128k vocab; fused rmsnorm / swiglu / rope run
-            1.4× over the pytorch baseline.
-          </p>
-        </div>
-        <div class="proj">
-          <h3>hobitat <span class="tagname">a social app that didn't catch</span></h3>
-          <p>
-            a social network for slowly getting good at hobbies, in public. i got the shape
-            wrong — a consistency-shaped product for an inconsistency-shaped behaviour.
-            <a href="posts/hobitat.html">the postmortem →</a>
-          </p>
+    <section id="work" class="reveal">
+      <div class="wrap">
+        <div class="sec-head"><h2>work</h2><p>all at skan.ai so far.</p></div>
+        <ol class="timeline">
+          <li>
+            <div class="when">mar 2026 — now</div>
+            <div class="what">
+              <h3>data scientist II <span>· computer-use agent</span></h3>
+              <p>leading a team on an agent that drives desktop GUIs across 12+ bfsi workflows. set-of-mark prompting and a thinker–grounder split got atomic steps to 95%.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">jul 2024 — apr 2026</div>
+            <div class="what">
+              <h3>data scientist I <span>· agentic process discovery</span></h3>
+              <p>next-activity prediction at 81% top-1 over 200+ classes, and the serving work that made it shippable: 2.9× throughput at 45% lower gpu cost.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">may — jul 2023</div>
+            <div class="what">
+              <h3>intern <span>· event extraction</span></h3>
+              <p>distilled bert, bart and pegasus into domain models 6× smaller at 98% of teacher f1.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">2020 — 2024</div>
+            <div class="what">
+              <h3>b.tech, electrical engineering <span>· iit delhi</span></h3>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="writing" class="reveal">
+      <div class="wrap">
+        <div class="sec-head"><h2>writing</h2><p>notes on things i build, break, and think about.</p></div>
+        <ul class="posts">
+          <li><a href="posts/finding-oss.html"><span>how hard it was to find open source to contribute to</span><time>aug 2026</time></a></li>
+          <li><a href="posts/hobitat.html"><span>things i got wrong about building hobitat</span><time>jul 2026</time></a></li>
+        </ul>
+        <p class="more"><a href="blog.html">all posts →</a><a href="reading.html">what i'm reading →</a></p>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal contact">
+      <div class="wrap">
+        <h2>efficient training, kernels, agents, or a weird idea. <em>happy to talk.</em></h2>
+        <a class="mail" href="mailto:shaurya.m207@gmail.com">shaurya.m207@gmail.com</a>
+        <div class="pills">
+          <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">github</a>
+          <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">x · @shaurya_mk</a>
+          <a href="https://www.linkedin.com/in/shaurya-madukuri/" target="_blank" rel="noopener">linkedin</a>
+          <a href="cv.pdf" target="_blank" rel="noopener">cv</a>
         </div>
       </div>
-      <p style="margin-top:1.6rem; color: var(--muted); font-size:0.95rem;">
-        also a paper: <em>glaucoma abnormality classification using YOLO and SWIN transformer</em>,
-        <a href="https://doi.org/10.1109/ISBI56570.2024.10635301" target="_blank" rel="noopener">IEEE ISBI 2024</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- WRITING -->
-  <section id="writing">
-    <div class="wrap">
-      <h2 class="title">writing</h2>
-      <ul class="writing-list">
-        <li><a href="posts/finding-oss.html">how hard it was to find open source to contribute to</a><span class="date">2026-08-10</span></li>
-        <li><a href="posts/hobitat.html">things i got wrong about building hobitat</a><span class="date">2026-07-29</span></li>
-      </ul>
-      <p style="margin-top:1.4rem;"><a href="blog.html">all posts →</a> &nbsp; <a href="reading.html">what i'm reading →</a></p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <h2 class="title">contact</h2>
-      <p style="color: var(--muted);">efficient training, kernels, agents, or a weird idea — happy to talk.</p>
-      <div class="contact-links">
-        <a href="mailto:shaurya.m207@gmail.com">email</a>
-        <a href="https://github.com/Shaurya-M002" target="_blank" rel="noopener">github</a>
-        <a href="https://x.com/shaurya_mk" target="_blank" rel="noopener">twitter</a>
-        <a href="https://www.linkedin.com/in/shaurya-madukuri/" target="_blank" rel="noopener">linkedin</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="foot">
-    <div class="wrap">shoreyaww · shaurya madukuri · 2026</div>
+    <div class="wrap"><span>shoreyaww · 2026</span><span>plain html, no framework</span></div>
   </footer>
 
-  <script src="portfolio.js?v=3"></script>
+  <dialog id="reel" aria-label="reel">
+    <button class="close" type="button" aria-label="close">×</button>
+    <video controls playsinline preload="none" poster="media/reel.jpg" src="media/reel.mp4"></video>
+    <p><a href="media/reel.mp4" download>download the reel</a></p>
+  </dialog>
+
+  <script src="site.js?v=1"></script>
 </body>
 </html>
